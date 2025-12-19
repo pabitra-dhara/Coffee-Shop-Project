@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,12 @@
   <link rel="icon" href="logo.jpg" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- Navbar -->
   <header>
     <nav>
-      <h1 class="logo">
-        <img src="logo.jpg" alt="CoffeeHouse Logo">CoffeeHouse
-      </h1>
+      <h1 class="logo"><a href="index.html"><img src="logo.jpg" alt="CoffeeHouse Logo">CoffeeHouse</a></h1>
       <ul>
         <li><a href="index.html#home">Home</a></li>
         <li><a href="menu.html" class="active">Menu</a></li>
@@ -28,6 +28,8 @@
     <h2>Our Coffee Menu</h2>
     <p>Discover our freshly brewed collection crafted with love and quality beans.</p>
 
+    <input type="text" id="searchInput" placeholder="Search coffee..." class="search-box" />
+
     <table>
       <thead>
         <tr>
@@ -36,32 +38,116 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Caffè Latte</td><td>₹235</td></tr>
-        <tr><td>Vanilla Latte</td><td>₹280</td></tr>
-        <tr><td>Hazelnut Latte</td><td>₹280</td></tr>
-        <tr><td>Caramel Latte</td><td>₹280</td></tr>
-        <tr><td>Pumpkin Spice Latte</td><td>₹345</td></tr>
-        <tr><td>White Mocha Coconut Barfi Latte</td><td>₹345</td></tr>
-        <tr><td>Velvet Vanilla Latte</td><td>₹330</td></tr>
-        <tr><td>Chocolate Cappuccino</td><td>₹299</td></tr>
-        <tr><td>Caffè Mocha</td><td>₹270</td></tr>
-        <tr><td>Caramel Macchiato</td><td>₹295</td></tr>
-        <tr><td>White Chocolate Mocha</td><td>₹270</td></tr>
-        <tr><td>Caffè Americano</td><td>₹215</td></tr>
-        <tr><td>Flat White</td><td>₹295</td></tr>
-        <tr><td>Cappuccino</td><td>₹260</td></tr>
-        <tr><td>White Mocha Frappuccino</td><td>₹315</td></tr>
-        <tr><td>Mocha Frappuccino</td><td>₹315</td></tr>
-        <tr><td>Caramel Java Chip Frappuccino</td><td>₹355</td></tr>
-        <tr><td>Caramel Frappuccino</td><td>₹299</td></tr>
-        <tr><td>Coffee Frappuccino</td><td>₹265</td></tr>
-        <tr><td>Espresso Frappuccino</td><td>₹299</td></tr>
-        <tr><td>Vanilla Cream Frappuccino</td><td>₹295</td></tr>
-        <tr><td>Double Chocolate Chip Frappuccino</td><td>₹330</td></tr>
-        <tr><td>Green Tea Latte</td><td>₹240</td></tr>
-        <tr><td>Chai Tea Latte</td><td>₹240</td></tr>
-        <tr><td>Signature Hot Chocolate</td><td>₹240</td></tr>
-        <tr><td>Cold Brew Black</td><td>₹280</td></tr>
+        <tr class="menu-row">
+          <td class="menu-item">
+            Vanilla Latte
+            <button class="add-cart" onclick="addToCart('Vanilla Latte',280)">
+              Add to Cart
+            </button>
+          </td>
+          <td>₹280</td>
+        </tr>
+
+        <tr>
+          <td>Vanilla Latte</td>
+          <td>₹280</td>
+        </tr>
+        <tr>
+          <td>Hazelnut Latte</td>
+          <td>₹280</td>
+        </tr>
+        <tr>
+          <td>Caramel Latte</td>
+          <td>₹280</td>
+        </tr>
+        <tr>
+          <td>Pumpkin Spice Latte</td>
+          <td>₹345</td>
+        </tr>
+        <tr>
+          <td>White Mocha Coconut Barfi Latte</td>
+          <td>₹345</td>
+        </tr>
+        <tr>
+          <td>Velvet Vanilla Latte</td>
+          <td>₹330</td>
+        </tr>
+        <tr>
+          <td>Chocolate Cappuccino</td>
+          <td>₹299</td>
+        </tr>
+        <tr>
+          <td>Caffè Mocha</td>
+          <td>₹270</td>
+        </tr>
+        <tr>
+          <td>Caramel Macchiato</td>
+          <td>₹295</td>
+        </tr>
+        <tr>
+          <td>White Chocolate Mocha</td>
+          <td>₹270</td>
+        </tr>
+        <tr>
+          <td>Caffè Americano</td>
+          <td>₹215</td>
+        </tr>
+        <tr>
+          <td>Flat White</td>
+          <td>₹295</td>
+        </tr>
+        <tr>
+          <td>Cappuccino</td>
+          <td>₹260</td>
+        </tr>
+        <tr>
+          <td>White Mocha Frappuccino</td>
+          <td>₹315</td>
+        </tr>
+        <tr>
+          <td>Mocha Frappuccino</td>
+          <td>₹315</td>
+        </tr>
+        <tr>
+          <td>Caramel Java Chip Frappuccino</td>
+          <td>₹355</td>
+        </tr>
+        <tr>
+          <td>Caramel Frappuccino</td>
+          <td>₹299</td>
+        </tr>
+        <tr>
+          <td>Coffee Frappuccino</td>
+          <td>₹265</td>
+        </tr>
+        <tr>
+          <td>Espresso Frappuccino</td>
+          <td>₹299</td>
+        </tr>
+        <tr>
+          <td>Vanilla Cream Frappuccino</td>
+          <td>₹295</td>
+        </tr>
+        <tr>
+          <td>Double Chocolate Chip Frappuccino</td>
+          <td>₹330</td>
+        </tr>
+        <tr>
+          <td>Green Tea Latte</td>
+          <td>₹240</td>
+        </tr>
+        <tr>
+          <td>Chai Tea Latte</td>
+          <td>₹240</td>
+        </tr>
+        <tr>
+          <td>Signature Hot Chocolate</td>
+          <td>₹240</td>
+        </tr>
+        <tr>
+          <td>Cold Brew Black</td>
+          <td>₹280</td>
+        </tr>
       </tbody>
     </table>
   </section>
@@ -70,5 +156,7 @@
   <footer>
     <p>2025 CoffeeHouse. All rights reserved.</p>
   </footer>
+  <script src="search.js"></script>
 </body>
+
 </html>

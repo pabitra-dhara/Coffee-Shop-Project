@@ -11,12 +11,19 @@
   <!-- Navigation -->
   <header>
     <nav>
-      <h1 class="logo"><img src="logo.jpg" alt="CoffeeHouse Logo">CoffeeHouse</h1>
+      <h1 class="logo"><a href="#home"><img src="logo.jpg" alt="CoffeeHouse Logo">CoffeeHouse</a></h1>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" id="loginBtn">Login</a></li>
+        <li class="user-menu" id="userMenu" style="display:none;">
+          <span id="welcomeUser">User</span>
+          <ul class="dropdown">
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
@@ -86,5 +93,29 @@
   <footer>
     <p>2025 CoffeeHouse. All rights reserved.</p>
   </footer>
+
+  <!--login-->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span class="close">x</span>
+
+    <h2 id="authTitle">Login</h2>
+
+    <input type="text" id="name" placeholder="Name" style="display:none;">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+
+    <button id="authBtn">Login</button>
+
+    <p>
+      <span id="toggleText">New user?</span>
+      <a href="#" id="toggleAuth">Sign up</a>
+    </p>
+  </div>
+</div>
+
+
+
+<script src="script.js"></script>
 </body>
 </html>
